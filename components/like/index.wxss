@@ -1,0 +1,25 @@
+.container {
+  /* 消除容器的块级元素性，容器改为自适应宽度 */
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10rpx;
+  width: 90rpx;
+}
+
+.container image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container text {
+  font-size: 24rpx;
+  color: #bbbbbb;
+  /* relative是相对定位，fixed：相对浏览器绝对定位，absolute:相对父元素绝对定位 */
+  position: relative;
+  /* 相对定位，相对底部元素向上浮动10rpx */
+  bottom: 5rpx;
+  /* 相对定位，相对左边元素向右浮动5rpx */
+  left: 5rpx;
+  /* 行高与文字大小一致，消除文字默认间距 */
+  line-height: 24rpx;
+}

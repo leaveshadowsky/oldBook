@@ -1,0 +1,7 @@
+<view class="container" hidden="{{hidden}}">
+  <!-- 数据绑定实现class更换，通过{{}}，中写表达式来给class实现动态绑定 -->
+  <image class="classic-img {{playing?'rotation':''}}" src="{{img}}" />
+  <image class="player-img" bind:tap="onPlay" src="{{playing?musicPause:musicPlaying}}" />
+  <image class="tag" src="{{musicImg}}" />
+  <text class="content">{{content}}</text>
+</view>

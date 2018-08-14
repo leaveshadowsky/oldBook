@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="header">
+    <v-episode class="episode" index="{{classic.index}}" />
+    <v-like class="like" bind:isLike="onLike" likeTimes="{{likeCount}}" isLike="{{likeStatus}}" />
+  </view>
+  <v-movie hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <v-music wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" songSrc="{{classic.url}}" />
+  <v-essay hidden="{{classic.type!=300}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <v-navi bind:left="onNext" bind:right="onPrevious" title="{{classic.title}}" first="{{first}}" latest="{{latest}}" class="navi"
+  />
+</view>

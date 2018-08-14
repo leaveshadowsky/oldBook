@@ -1,0 +1,5 @@
+<view hidden="{{hidden}}" class="classic-container">
+  <image class="classic-img" src="{{img}}" />
+  <image class="tag" src="{{essayImg}}" />
+  <text>{{content}}</text>
+</view>

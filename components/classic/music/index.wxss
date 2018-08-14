@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center
+}
+
+.classic-img {
+  width: 422rpx;
+  height: 422rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
+}
+
+.player-img {
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  bottom: 270rpx;
+}
+
+.tag {
+  width: 46rpx;
+  height: 142rpx;
+  /* 相对现在位置的偏移 */
+  position: relative;
+  right: 310rpx;
+  bottom: 160rpx;
+}
+
+.content {
+  font-size: 36rpx;
+  position: absolute;
+  bottom: 300rpx;
+  /* 当文本不够长时自适应宽度，当达到了最大宽度时换行 */
+  max-width: 550rpx;
+}
+
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

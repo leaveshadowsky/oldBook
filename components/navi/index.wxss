@@ -1,0 +1,22 @@
+.container {
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 2px;
+  background-color: #f7f7f7;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  height: 60rpx;
+  width: 50rpx;
+  /* margin-left: 10rpx;
+  margin-right: 10rpx; */
+  margin: 0 20rpx;
+}
+
+.title {
+  font-size: 28rpx
+}

@@ -1,0 +1,27 @@
+/* 创建一个共有的wxss文件来复用css样式 */
+
+.classic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classic-img {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.tag {
+  width: 46rpx;
+  height: 142rpx;
+  /* 相对现在位置的偏移 */
+  position: relative;
+  right: 310rpx;
+  bottom: 58rpx;
+}
+
+.classic-container text {
+  font-size: 36rpx;
+  /* 当文本不够长时自适应宽度，当达到了最大宽度时换行 */
+  max-width: 550rpx;
+}

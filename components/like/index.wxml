@@ -1,0 +1,4 @@
+<view bind:tap="pressLike" class=".container">
+  <image src="{{isLike?likeImg:dislikeImg}}" />
+  <text>{{likeTimes}}</text>
+</view>

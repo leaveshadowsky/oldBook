@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.wpy": "vue",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.wxml": "html"
+  },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2
+}
