@@ -58,7 +58,7 @@ Page({
     //   }
     // )
 
-    //promise正确用法:不要在第一次调用API后的res箭头函数中直接.then，而是应该return这个promise
+    //promise正确用法:不要在第一次调用API后的回调函数中直接.then，而是应该return这个promise
     //在外面再用.then 形式如下
     //调用API1
     bookModel.getHotList()
@@ -67,11 +67,34 @@ Page({
         // console.log(res)
         return bookModel.getMyBookCount()
       })
-      //调用API2后等return上一次promise再在外部then
+      //调用API2后等return上一次promise再在外部.then()，即在第一个then的外部.then(),
+      //而不是在return promise实例后.then()
       .then(res => {
         // console.log(res)
         //调用API3...像这样，可平行调用API
       })
+
+    //处理异步最终方案
+    //使用async和await处理异步
+    //async和await一定要搭配使用
+    //定义delay函数作为演示async和await
+    // function delay(word) {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resovle(word)
+    //     }, 20000)
+    //   })
+    // }
+    // async function start() {
+    //   //可以理解成await是等待的意思，await等待一个函数的执行，然后执行相应的逻辑
+    //   //这里word1接收delay函数resolve出来的word，await会等到指定函数执行完毕
+    //   //promise状态改变才会执行
+    //   const word1 = await delay("aaa")
+    //   //这里写上一级函数执行完毕后，promise状态改变后执行的逻辑
+    //   console(word1)
+    //   const word2 = await delay("bbb")
+    //   console(word2)
+    // }
   },
 
   /**

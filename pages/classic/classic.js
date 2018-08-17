@@ -5,7 +5,6 @@ import {
   LikeModel
 } from '../../models/like.js'
 
-
 let classicModel = new ClassicModel()
 let likeModel = new LikeModel()
 
