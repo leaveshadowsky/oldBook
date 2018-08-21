@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    books: []
   },
 
   /**
@@ -64,25 +64,28 @@ Page({
     bookModel.getHotList()
       .then(res => {
         //调用API2后的逻辑代码(继续调用API2))
-        // console.log(res)
-        return bookModel.getMyBookCount()
+        // return bookModel.getMyBookCount()
+        //获取服务器返回数据后更新data中的books
+        this.setData({
+          books: res
+        })
       })
-      //调用API2后等return上一次promise再在外部.then()，即在第一个then的外部.then(),
-      //而不是在return promise实例后.then()
-      .then(res => {
-        // console.log(res)
-        //调用API3...像这样，可平行调用API
-      })
+    //调用API2后等return上一次promise再在外部.then()，即在第一个then的外部.then(),
+    //而不是在return promise实例后.then()
+    // .then(res => {
+    //   // console.log(res)
+    //   //调用API3...像这样，可平行调用API
+    // })
 
-    //处理异步最终方案
-    //使用async和await处理异步
-    //async和await一定要搭配使用
-    //定义delay函数作为演示async和await
+    // // 处理异步最终方案
+    // // 使用async和await处理异步
+    // // async和await一定要搭配使用
+    // // 定义delay函数作为演示async和await
     // function delay(word) {
     //   return new Promise((resolve, reject) => {
     //     setTimeout(() => {
     //       resovle(word)
-    //     }, 20000)
+    //     }, 2000)
     //   })
     // }
     // async function start() {

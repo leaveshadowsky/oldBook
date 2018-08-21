@@ -1,1 +1,19 @@
-<text>莫慌，还没写</text>
+<!-- block标签没有实际意义，只是为了包裹做循环的代码(也可不加block)。item是
+小程序内置的一个变量，存放遍历列表的每一项 -->
+
+<view class="container">
+  <view class="header">
+    <view class="box">
+      <image src="/images/icon/search.png" />
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <image class="head-img" src="/images/book/quality.png" />
+    <view class="book-container">
+      <block wx:for="{{books}}" wx:key="id">
+        <v-book book="{{item}}" />
+      </block>
+    </view>
+  </view>
+</view>

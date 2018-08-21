@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 240rpx;
+  height: 360rpx;
+  /* 阴影效果 */
+  box-shadow: 2px 2px 3px #e3e3e3;
+  /* 为了让子元素相对这个容器绝对定位，所以设置成非static */
+  position: relative;
+}
+
+.container image {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.description {
+  /* 这里不应该将宽度设置成100%,(这会让下面有些元素溢出)因为一个容器宽度是width+左右padding，我们在下面设置了左右padding，
+  所以这里的容器宽度应该是240-10-15=215，但是一般取偶数，所以设置为216rpx
+  width: 100%; */
+  width: 216rpx;
+  /* 要实现描述的白色区域覆盖在img的上方，所以用absolute,绝对定位，相对于static以外第一个父元素定位，
+  但是这个父元素不可以是static，所以在container中我们将其设置为relative */
+  position: absolute;
+  /* 位于容器最底部 */
+  bottom: 0;
+  background-color: #fff;
+  padding: 5rpx 10rpx 8rpx 15rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.title {
+  margin-top: 10rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.author {
+  font-size: 20rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.foot {
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer {
+  color: #666666;
+}
