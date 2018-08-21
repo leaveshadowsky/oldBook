@@ -1,0 +1,4 @@
+<view class="container">
+  <progress percent="80" active stroke-width="20" activeColor="#707070" />
+  <p class="tips">{{currentYear}}年已经过了{{days}}天了{{throughPercent}}%</p>
+</view>
