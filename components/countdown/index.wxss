@@ -7,7 +7,7 @@
 
 .container progress {
   width: 80%;
-  margin-left: 50rpx;
+  margin-left: 70rpx;
 }
 
 .text-container {
