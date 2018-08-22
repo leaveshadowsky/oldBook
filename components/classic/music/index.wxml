@@ -3,5 +3,5 @@
   <image class="classic-img {{playing?'rotation':''}}" src="{{img}}" />
   <image class="player-img" bind:tap="onPlay" src="{{playing?musicPause:musicPlaying}}" />
   <image class="tag" src="{{musicImg}}" />
-  <text class="content">{{content}}</text>
+  <text class="content animated zoomIn">{{content}}</text>
 </view>

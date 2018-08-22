@@ -1,3 +1,4 @@
+@import "/animate.wxss";
 .container {
   width: 600rpx;
   height: 80rpx;

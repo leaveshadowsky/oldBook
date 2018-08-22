@@ -5,12 +5,12 @@
   <view class="header">
     <view class="box">
       <image src="/images/icon/search.png" />
-      <text>搜索书籍</text>
+      <text class="animated rotateInDownLeft">搜索书籍</text>
     </view>
   </view>
   <view class="sub-container">
-    <image class="head-img" src="/images/book/quality.png" />
-    <view class="book-container">
+    <image class="head-img animated flip" src="/images/book/quality.png" />
+    <view class="book-container animated rotateIn">
       <block wx:for="{{books}}" wx:key="id">
         <v-book book="{{item}}" />
       </block>
