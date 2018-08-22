@@ -1,11 +1,37 @@
+@import "/animate.wxss";
 .container {
   display: flex;
   flex-direction: column;
   align-items: center
 }
 
-.tips {}
-
 .container progress {
+  width: 80%;
+  margin-left: 50rpx;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  height: 70rpx;
   width: 100%;
+  position: relative;
+}
+
+.rightArrow {
+  height: 60rpx;
+  width: 50rpx;
+  position: absolute;
+  bottom: 0;
+  left: 130rpx;
+}
+
+.years {
+  font-size: 60rpx;
+}
+
+.days {
+  font-size: 60rpx;
 }

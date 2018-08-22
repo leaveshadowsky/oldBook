@@ -1,4 +1,10 @@
 <view class="container">
-  <progress percent="80" active stroke-width="20" activeColor="#707070" />
-  <p class="tips">{{currentYear}}年已经过了{{days}}天了{{throughPercent}}%</p>
+  <progress percent="{{throughPercent}}" active stroke-width="20" activeColor="#707070" show-info/>
+  <view class="text-container animated rollIn">
+    <image class="rightArrow" src="images/trangle@right.png" />
+    <text class="years">{{currentYear}}</text>
+    <text>th的</text>
+    <text class="days">{{days}}</text>
+    <text>个日夜</text>
+  </view>
 </view>

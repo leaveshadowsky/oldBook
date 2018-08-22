@@ -20,7 +20,7 @@ Component({
     //过了一年中的天数百分比
     throughPercent: Number
   },
-
+  //在生命周期钩子中调用定义的私有方法，在私有方法中在更新数据
   attached() {
     this._getYear()
     this._getDays()
