@@ -88,6 +88,7 @@ Page({
     //     }, 2000)
     //   })
     // }
+    // async可以认为定义一个等待执行的函数，等待await后接函数执行后promise状态改变再执行
     // async function start() {
     //   //可以理解成await是等待的意思，await等待一个函数的执行，然后执行相应的逻辑
     //   //这里word1接收delay函数resolve出来的word，await会等到指定函数执行完毕

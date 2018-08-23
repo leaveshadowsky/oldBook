@@ -1,5 +1,5 @@
 <view class="container">
-  <progress percent="{{throughPercent}}" active stroke-width="20" activeColor="#707070" show-info/>
+  <progress percent="{{throughPercent}}" active stroke-width="16" activeColor="#707070" show-info/>
   <view class="text-container animated rollIn">
     <image class="rightArrow" src="images/trangle@right.png" />
     <text class="years">{{currentYear}}</text>

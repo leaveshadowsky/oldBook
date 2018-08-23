@@ -20,6 +20,10 @@
   position: relative;
 }
 
+.text-container text {
+  color: #707070
+}
+
 .rightArrow {
   height: 60rpx;
   width: 50rpx;
