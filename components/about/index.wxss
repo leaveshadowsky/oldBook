@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+}
+
+.aboutIcon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.aboutUs {
+  font-weight: 100;
+  font-size: 26rpx
+}

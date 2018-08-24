@@ -4,7 +4,7 @@
   width: 240rpx;
   height: 360rpx;
   /* 阴影效果 */
-  box-shadow: 2px 2px 3px #e3e3e3;
+  box-shadow: 3px 3px 3px #e3e3e3;
   /* 为了让子元素相对这个容器绝对定位，所以设置成非static */
   position: relative;
 }

@@ -1,1 +1,9 @@
-<v-countdown></v-countdown>
+<view class="container">
+  <v-countdown></v-countdown>
+  <v-about></v-about>
+</view>
+
+<!-- <view>
+  <view class="container" bindtouchstart="containerTap"></view>
+  <view class="ripple" style="{{rippleStyle}}"></view>
+</view> -->

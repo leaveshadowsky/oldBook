@@ -21,7 +21,9 @@
 }
 
 .classic-container text {
-  font-size: 36rpx;
+  font-size: 30rpx;
+  position: absolute;
+  bottom: 324rpx;
   /* 当文本不够长时自适应宽度，当达到了最大宽度时换行 */
   max-width: 550rpx;
 }

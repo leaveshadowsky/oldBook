@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "v-countdown": "/components/countdown/index"
+    "v-countdown": "/components/countdown/index",
+    "v-about": "/components/about/index"
   }
 }

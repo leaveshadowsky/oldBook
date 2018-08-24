@@ -12,7 +12,7 @@ class HTTP {
   //处理异步的方案，如下三种：
   //1、纯粹的callback，剥夺了函数return的能力，所以会陷入回调地狱。request是一个异步函数，所以我们必须要在调用时在参数中传递一个回调函数
   //2、promise 区别就在于它不需要层层传递callback(具有return能力)
-  //3、async和await 目前小程序不支持
+  //3、async和await
   //Promise: 它是对象(对象可以保存状态)，而不是函数
   // 如何使用，在book.js中有注解使用
   request(params) {
