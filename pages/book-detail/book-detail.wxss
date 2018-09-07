@@ -1,0 +1,217 @@
+@import "/animate.wxss";
+
+.container {
+  background-color: #f5f5f5;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.title {
+  columns: #2f2f2f;
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.head image {
+  width: 200rpx;
+  height: 300rpx;
+  box-shadow: 2px 2px 3px #e3e3e3;
+  border-radius: 6px;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  width: 690rpx;
+  background-color: #fff
+}
+
+.headline {
+  font-size: 30rpx;
+  font-weight: 600;
+  columns: #2f2f2f;
+  margin-bottom: 20rpx;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  /* 设置flex自动换行 */
+  flex-wrap: wrap;
+}
+
+.comment-container v-tag {
+  margin-right: 15rpx;
+  /* 这里父容器不是flex布局margin-bottom不生效 */
+  margin-bottom: 10rpx;
+}
+
+.num {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #aaa;
+}
+
+.content {
+  /* 给段首加空格 */
+  text-indent: 74rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 这里尝试对v-tag自定义组件的第一个子节点修改css样式，但是其实不行，因为自定义是一组内置组件的集合，
+而这样设置样式并不能明确指定是对哪一个内置组件设置样式，所以我们应该在这里进一步对自定义组件中的
+内置组件进行选择，如下，加上tag组件中的view这个组件来选择。这样既可生效。
+nth-child还支持数学表达式，可以更高级的进行选择如nth-child(odd)*/
+/* 这种是后代选择器，不推荐使用
+.comment-container v-tag:nth-child(1) view {
+  background-color: #fffbdd
+} */
+/* 推荐使用这种子元素选择器，优点是更加精准地选择,以下这种方式优点是可以对
+组件中的样式随意修改，缺点是必须对组件的内部构造十分了解，破坏了组件的封装性*/
+.comment-container>v-tag:nth-child(1)>view {
+  background-color: #E0FFFF
+}
+
+.comment-container>v-tag:nth-child(2)>view {
+  background-color: #fffbdd
+}
+
+.comment-container>v-tag:nth-child(3)>view {
+  background-color: #E6E6FA
+}
+
+/* 第二种方法实现上述需求：定义外部样式，传递给组件，由于外部样式和普通样式的先后顺序不确定，导致覆盖不成功，
+所以在某些样式后面加限定符，来强调重要性，即可强制覆盖 */
+/* 以下方式同样可以修改默认样式，采用参数传递的方式来修改，类似于组件属性(js)和slot(wxml)而css对应的
+则是外部样式 */
+/* .ex-tag {
+  background-color: #fffbdd !important;
+} */
+.detail-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 100rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  color: #999;
+  margin-right: 30rpx;
+}
+
+.post-container {
+  width: 690rpx;
+  height: 100rpx;
+  box-shadow: 1px -1px 1px #e3e3e3;
+  /* 相对于浏览器窗口定位 */
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 30rpx;
+  justify-content: space-between;
+}
+
+.post-fake {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  width: 460rpx;
+  border: 1px solid #999;
+  border-radius: 15px;
+  font-size: 22rpx;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like {
+  margin-right: 30rpx;
+}
+
+.posting-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.post-header {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+  border-top: 1px solid #f5f5f5;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel {
+  color: #666;
+}
+
+.post-header text {
+  padding: 25rpx;
+}
+
+.post-header>text:first-child {
+  font-size: 22rpx;
+  color: #bbb;
+}
+
+.posting-container .comment-container {
+  width: 690rpx;
+  padding: 40rpx 30rpx 0 30rpx;
+}
+
+.post {
+  width: 690rpx;
+  margin: 30rpx auto;
+  height: 56rpx;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding-left: 25rpx;
+  font-size: 22rpx;
+}

@@ -1,0 +1,82 @@
+<!-- 导入wxs模块 -->
+<wxs src="../../utils/filter.wxs" module="util" />
+<view class="container">
+  <view class="head">
+    <image src="{{book.image}}" />
+    <text class="title">{{book.title}}</text>
+    <text class="author">{{book.author}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">短评</text>
+    <view class="comment-container">
+      <block wx:for="{{util.limit(comments,10)}}" wx:key="content">
+        <!-- 向组件传递外部样式 -->
+        <!-- <v-tag tag-class="ex-tag" text="{{item.content}}"> -->
+        <v-tag class="bounceIn" text="{{item.content}}">
+          <!-- 向组件的slot传入标签 -->
+          <text class="num" slot="after">{{'+'+item.nums}}</text>
+        </v-tag>
+      </block>
+    </view>
+  </view>
+  <view class="sub-container">
+    <text class="headline">内容简介</text>
+    <!-- 由于服务器返回的原始数据的换行符经过转译，既是\\n，所以在text中不会被解析成换行符
+    所以可想到定义一个函数，将book.summary当做参数传递，然后经过处理，返回后的数据
+    就是可被text解析的\n
+    小程序提供了wxs来实现在wxml中调用js方法 -->
+    <!-- 这里的decode是为了让text解析转译字符如&nbsp -->
+    <text class="content" decode="{{true}}">{{util.format(book.summary)}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">书本信息</text>
+    <view class="detail-container">
+      <view class="vertical description">
+        <text>出版社:</text>
+        <text>出版年:</text>
+        <text>页数:</text>
+        <text>定价:</text>
+        <text>装帧:</text>
+      </view>
+      <view class="vertical">
+        <text>{{book.publisher}}</text>
+        <text>{{book.pubdate}}</text>
+        <text>{{book.pages}}</text>
+        <text>{{book.price}}</text>
+        <text>{{book.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="post-container" wx:if="{{!posting}}">
+  <view bind:tap="onFakePost" class="post-fake">
+    <text>输入短评</text>
+  </view>
+  <view class="like-container">
+    <v-like bind:isLike="onLike" class="like" likeTimes="{{likeCount}}" isLike="{{likeStatus}}"></v-like>
+  </view>
+</view>
+<view class="posting-container" wx:if="{{posting}}">
+  <view class="post-header">
+    <text>仅可点击标签+1</text>
+    <text bind:tap="onCancel" class="cancel">取消</text>
+  </view>
+  <view class="comment-container">
+    <block wx:for="{{util.limit(comments,3)}}" wx:key="content">
+      <!-- 向组件传递外部样式 -->
+      <!-- <v-tag tag-class="ex-tag" text="{{item.content}}"> -->
+      <v-tag bind:tapping="onPost" class="bounceIn" text="{{item.content}}">
+        <!-- 向组件的slot传入标签 -->
+        <text class="num" slot="after">{{'+'+item.nums}}</text>
+      </v-tag>
+    </block>
+  </view>
+  <!-- input监听函数，当用户输入完毕点击回车，则会触发 -->
+  <input bindconfirm="onPost" class="post" placeholder="短评最多可输入12个字" />
+</view>
+
+<v-mask bind:tap="onPressMask" wx:if="{{posting}}" />
+
+<!-- 在wxml中直接写wxs格式如下 -->
+<!-- <wxs module="">
+</wxs> -->

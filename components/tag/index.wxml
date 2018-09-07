@@ -1,0 +1,9 @@
+<!-- 这里从页面外部传递来的tag-class(外部样式)写在container(普通样式)后，是为了将container某些样式覆盖
+但不一定成功(因为样式的先后顺序不确定)，也可以添加样式 -->
+<!-- <view class="container tag-class"> -->
+<view bind:tap="onTap" class="container">
+  <text>{{text}}</text>
+  <!-- 这里提供一个插槽，外部传入标签数据时，则slot会被替换成传入的标签，
+  若没有插入，则slot为空或者为默认值。插槽的行为和properties相似 -->
+  <slot name="after"></slot>
+</view>

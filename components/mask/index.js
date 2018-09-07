@@ -1,4 +1,4 @@
-// components/about/index.js
+// components/mask/index.js
 Component({
   /**
    * 组件的属性列表
@@ -6,6 +6,7 @@ Component({
   properties: {
 
   },
+
   /**
    * 组件的初始数据
    */
@@ -17,8 +18,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    clickAbout() {
-      console.log("点击了关于组件")
-    }
+
   }
 })

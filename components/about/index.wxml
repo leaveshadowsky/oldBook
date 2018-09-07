@@ -1,4 +1,4 @@
-<view class="container">
+<view bindtap="clickAbout" class="container">
   <image class="aboutIcon" src="image/aboutIcon.png" />
   <text class="aboutUs">关于</text>
 </view>

@@ -5,14 +5,11 @@
 
 /* flex布局需要满足两个基本格式：container 和 item，既父元素class设置成container容器，且在css中
 加上display:flex，之后被这个父元素包裹的子元素item的块状特性就消失了。 */
-
 /*对于view组件来说 容器若没有设置高度，则是自适应的，元素撑起的高度即为容器的高度，而宽度没设置就是默认充满屏幕*/
-
 .container {
   display: flex;
   /* 设置flex子元素的排列方向，默认是水平(row) */
   /* flex-direction: column; */
-  /* 设置flex子元素的排列方向且倒序 */
   flex-direction: column;
   /* justify-content是用来设置item子元素的对齐方向，默认start是上和左，end是下右
   但是若是有reverse则相反,除此之外还有center(居中),space-around(等距),space-between(均匀) */

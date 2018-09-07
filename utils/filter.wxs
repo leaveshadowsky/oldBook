@@ -1,0 +1,25 @@
+// 定义wxs文件,wxs只是语法和js相似，但是wxs有独立的运行环境
+//在写wxs时，直接用js ES5语法即可，只有少部分wxs不支持
+var format = function (text) {
+  // 运用正则表达式将\\n转化为\n
+  // 生成正则表达式对象
+  // 因为需要转译，所以是\\\\n
+  // 由于传过来的text是由数据绑定得来的，所以要执行两次format，而第一次
+  // text是null，所以若不加判断，则会报错
+  if (!text) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+//写一个过滤器，将筛选出comments数组的前几条
+var limit = function (array, length) {
+  return array.slice(0, length)
+}
+
+//将模块导出
+module.exports = {
+  format: format,
+  limit: limit
+}

@@ -1,0 +1,11 @@
+/* mask主要是写黑色透明背景蒙层，主要写css样式 */
+.container {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  /* 设置透明度 */
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
