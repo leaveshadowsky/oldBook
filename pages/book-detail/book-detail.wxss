@@ -50,6 +50,10 @@
   margin-bottom: 20rpx;
 }
 
+.shadow {
+  color: #999;
+}
+
 .comment-container {
   display: flex;
   flex-direction: row;

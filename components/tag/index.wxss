@@ -8,4 +8,6 @@
   color: #666666;
   border-radius: 2px;
   font-size: 28rpx;
+  margin-right: 15rpx;
+  margin-bottom: 10rpx;
 }

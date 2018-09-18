@@ -7,6 +7,8 @@
   box-shadow: 3px 3px 3px #e3e3e3;
   /* 为了让子元素相对这个容器绝对定位，所以设置成非static */
   position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
 }
 
 .container image {

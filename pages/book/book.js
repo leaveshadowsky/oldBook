@@ -1,6 +1,9 @@
 import {
   BookModel
 } from '../../models/book.js'
+import {
+  random
+} from '../../utils/common.js'
 
 const bookModel = new BookModel()
 
@@ -10,7 +13,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: []
+    books: [],
+    searching: false,
+    more: ''
   },
 
   /**
@@ -100,53 +105,23 @@ Page({
     //   console(word2)
     // }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onSearching(event) {
+    this.setData({
+      searching: true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onCancel(event) {
+    this.setData({
+      searching: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onReachBottom() {
+    //通过监听页面的触底函数来向组件传递向服务器加载更多的信息。
+    //这里采用属性传递的方式。
+    //通过使用产生随机字符串来触发observer监听函数
+    this.setData({
+      more: random(16)
+    })
   }
+
 })

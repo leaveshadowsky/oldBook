@@ -1,9 +1,9 @@
 <!-- block标签没有实际意义，只是为了包裹做循环的代码(也可不加block)。item是
 小程序内置的一个变量，存放遍历列表的每一项 -->
 
-<view class="container">
+<view wx:if="{{!searching}}" class="container">
   <view class="header">
-    <view class="box">
+    <view bind:tap="onSearching" class="box">
       <image src="/images/icon/search.png" />
       <text class="animated rotateInDownLeft">搜索书籍</text>
     </view>
@@ -17,3 +17,4 @@
     </view>
   </view>
 </view>
+<v-search more="{{more}}" bind:cancel="onCancel" wx:if="{{searching}}" />
